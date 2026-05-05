@@ -12,22 +12,23 @@ public class RegistrationPage extends BasePage {
 		
 	}
 	
-	@FindBy(xpath="//input[@id='input-firstname']")
+	@FindBy(xpath="//input[@id='firstname']")
 	WebElement txtFirstName;
 	
-	@FindBy(xpath="//input[@id='input-lastname']")
+	@FindBy(xpath="//input[@id='lastname']")
 	WebElement txtLastName;
 	
-	@FindBy(xpath="//input[@id='input-email']")
+	@FindBy(xpath="//input[@name='email']")
 	WebElement txtEmail;
 	
-	@FindBy(xpath="//input[@id='input-password']")
+	@FindBy(xpath="//input[@id='password']")
 	WebElement txtPassword;
 	
-	@FindBy(xpath="//input[@name='agree']")
-	WebElement chkBoxpolicy;
+	/*
+	 * @FindBy(xpath="//input[@name='agree']") WebElement chkBoxpolicy;
+	 */
 	
-	@FindBy(css="button.btn.btn-primary")
+	@FindBy(xpath="//a[normalize-space()='Create Account']")
 	WebElement btnContinue;
 	
 	@FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")
@@ -50,10 +51,11 @@ public class RegistrationPage extends BasePage {
 		txtPassword.sendKeys(pwd);
 	}
 	
-	public void setPrivacy() {
-		chkBoxpolicy.click();
-		
-	}
+	/*
+	 * public void setPrivacy() { chkBoxpolicy.click();
+	 * 
+	 * }
+	 */
 	
 	public void clickContinue() {
 		btnContinue.click();
